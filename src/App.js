@@ -1,10 +1,11 @@
 import React from 'react';
+import NameList from './components/NameList/NameList';
 
 function App() {
   return (
-    <div>
-      <h1>Hello React</h1>
-    </div>
+   <div>
+     <NameList/>
+   </div>
   );
 }
 
