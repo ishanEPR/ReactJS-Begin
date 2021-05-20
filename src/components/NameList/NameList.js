@@ -1,5 +1,6 @@
 import React from 'react';
 import NameListItems from './NameListItems';
+import NameListItems1 from './NameListItems1';
 function NameList()
 {
     return(
@@ -8,7 +9,7 @@ function NameList()
             <hr/>
             <ul>
            <NameListItems/>
-            <li>Ishan</li>
+            <NameListItems1/>
             <li>Ishan</li>
             <li>Ishan</li>
             </ul>
