@@ -8,8 +8,8 @@ function NameList()
             <h1>Name List</h1>
             <hr/>
             <ul>
-           <NameListItems/>
-            <NameListItems1/>
+           <NameListItems name='Ishan Reshmika' course='c'/>
+            <NameListItems1 name='Dilshan' course='c++'/>
             <li>Ishan</li>
             <li>Ishan</li>
             </ul>

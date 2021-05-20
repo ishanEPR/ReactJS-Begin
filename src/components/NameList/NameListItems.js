@@ -1,9 +1,9 @@
 import React from 'react';
 
-function NameListItems()
+function NameListItems(props)
 {
     return (
-        <li>Ishan1</li>
+        <li>{props.name} course-{props.course}</li>
     );
 }
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
-function NameListItems1()
+function NameListItems1(props)
 {
-    return <li>Hello Ishan</li>;
+    return <li>{props.name} course-{props.course}</li>;
 }
 
 export default NameListItems1;
