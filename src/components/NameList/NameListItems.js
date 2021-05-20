@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 function NameListItems(props)
 {
@@ -7,7 +8,7 @@ function NameListItems(props)
             <p>{props.name}</p>
             <p>course-{props.course}</p>
             <p>{props.email}</p>
-            <p>Birthday-{new Intl.DateTimeFormat('en-US').format(new Date(props.birth)) }</p>
+            <p>Birthday- {moment(props.birth).format('DD-MM-YYYY')}</p>
          </li>
     );
 }

@@ -3,7 +3,8 @@ import NameListItems from './NameListItems';
 import NameListItems1 from './NameListItems1';
 function NameList()
 {
-    const nameList={
+    const nameList=[{
+
         name:{
             title:'mr.',
             first:'ishan',
@@ -18,7 +19,7 @@ function NameList()
             age:24,
         },
 
-    };
+    }];
     return(
         <React.Fragment>
             <h1>Name List</h1>
@@ -31,7 +32,7 @@ function NameList()
            avater=''
            city=''    
            />
-            <NameListItems name={nameList.name.title+' '+nameList.name.first} email={nameList.email} birth={nameList.dob.date}/>
+            <NameListItems name={nameList[0].name.title+' '+nameList[0].name.first} email={nameList[0].email} birth={nameList[0].dob.date}/>
             <NameListItems name='Nelara' course='Java'/>
             <NameListItems name='Ashini' course='Nodejs'/>
             </ul>
