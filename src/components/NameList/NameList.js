@@ -1,11 +1,12 @@
 import React from 'react';
 import NameListItems from './NameListItems';
 import NameListItems1 from './NameListItems1';
+
 function NameList()
 {
     const nameList=[{
         id:1,
-
+    
         name:{
             title:'mr.',
             first:'ishan',
@@ -88,13 +89,15 @@ function NameList()
     }
     return(
         <React.Fragment>
-            <h1>Name List</h1>
-            <hr/>
-            <ul>
+           <div className='container mt-4'>
+           <ul className='list-group'>
          
-           {nameListComponent()}
-      
-            </ul>
+         {nameListComponent()}
+    
+          </ul>
+
+           </div>
+          
 
         </React.Fragment>
      
