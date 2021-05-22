@@ -114,7 +114,10 @@ function NameList()
 
 
         }
-        setnameList(nameList=> nameList.concat(newUser))
+      //  setnameList(nameList=> nameList.concat(newUser));
+        //spread operator
+
+        setnameList((nameList)=>[...nameList,newUser]);
 
     }
   
