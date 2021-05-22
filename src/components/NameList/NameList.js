@@ -1,10 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 import NameListItems from './NameListItems';
 import NameListItems1 from './NameListItems1';
 
 function NameList()
 {
-    const nameList=[{
+    const [nameList,setnameList]=useState([{
         id:1,
     
         name:{
@@ -74,7 +74,8 @@ function NameList()
             age:24,
         },
 
-    },];
+    },]);
+   
 
     const nameListComponent=()=>
     {
@@ -87,9 +88,40 @@ function NameList()
         
         );
     }
+
+    const addUserHandler=()=>
+    {
+        const newUser={
+            
+                id:3,
+        
+                name:{
+                    title:'mr.',
+                    first:'reshmika',
+                    last:'lakshitha',
+                },
+                location:{
+                    city:'Kottagoda,Matara',
+                },
+                email:'dilshan@gmail.com',
+                dob:{
+                    date:'1997-03-30',
+                    age:24,
+                
+        
+            },
+
+
+
+        }
+        setnameList(nameList=> nameList.concat(newUser))
+
+    }
+  
     return(
         <React.Fragment>
            <div className='container mt-4'>
+           <button className='btn btn-primary mb-2' onClick={addUserHandler}>Add</button>
            <ul className='list-group'>
          
          {nameListComponent()}
