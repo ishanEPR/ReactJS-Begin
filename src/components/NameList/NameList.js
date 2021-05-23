@@ -1,9 +1,10 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import NameListItems from './NameListItems';
 import NameListItems1 from './NameListItems1';
 
 function NameList()
 {
+    const [loadData,setLoadData]=useState(new Date());
     const [nameList,setnameList]=useState([{
         id:1,
     
@@ -76,6 +77,16 @@ function NameList()
 
     },]);
    
+    useEffect(() => {
+      fetch("https://randomuser.me/api").then(Response=>
+      {
+          return Response.json();
+      }).then(ResponseData=>
+        {
+          setnameList( (nameList)=>[...nameList, ResponseData.results[0]])
+         // console.log(ResponseData.results[0]);
+        })
+    },[loadData])
 
     const nameListComponent=()=>
     {
@@ -91,33 +102,7 @@ function NameList()
 
     const addUserHandler=()=>
     {
-        const newUser={
-            
-                id:3,
-        
-                name:{
-                    title:'mr.',
-                    first:'reshmika',
-                    last:'lakshitha',
-                },
-                location:{
-                    city:'Kottagoda,Matara',
-                },
-                email:'dilshan@gmail.com',
-                dob:{
-                    date:'1997-03-30',
-                    age:24,
-                
-        
-            },
-
-
-
-        }
-      //  setnameList(nameList=> nameList.concat(newUser));
-        //spread operator
-
-        setnameList((nameList)=>[...nameList,newUser]);
+      setLoadData(new Date());
 
     }
   
