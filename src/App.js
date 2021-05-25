@@ -34,11 +34,20 @@
 // export default App;
 
 import React from 'react';
+import NameList from './components/pages/NameList/NameList';
 
 function App()
 {
-  return(
-    <h1>Hello Ishan</h1>
+
+  return (
+    <React.Fragment>
+      <h1>Name List</h1>
+
+      <NameList/>
+    </React.Fragment>
   );
+
+
 }
+
 export default App;
