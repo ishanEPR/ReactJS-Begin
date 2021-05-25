@@ -126,59 +126,60 @@
 
 // export default NameList;
 
-import React from "react";
+import React,{useState} from "react";
 import NameListItems1 from './NameListItems1';
 
 function NameList(props) {
 
-    const nameList=[
-    {
-        id:1,
-                name:{
-            title:'mr.',
-            first:'ishan',
-            last:'reshmika',
+    const [nameList,setState]=useState([
+        {
+            id:1,
+                    name:{
+                title:'mr.',
+                first:'ishan',
+                last:'reshmika',
+            },
+            location:{
+                city:'Kottagoda,Matara',
+            },
+            email:'reshmikaediriweera1997@gmail.com',
+            dob:{
+                date:'1997-03-30',
+                age:24,
+            },
+            picture: {
+    
+              
+                medium: "https://randomuser.me/api/portraits/med/men/75.jpg",
+               
+              },
         },
-        location:{
-            city:'Kottagoda,Matara',
-        },
-        email:'reshmikaediriweera1997@gmail.com',
-        dob:{
-            date:'1997-03-30',
-            age:24,
-        },
-        picture: {
-
-          
-            medium: "https://randomuser.me/api/portraits/med/men/75.jpg",
-           
-          },
+        {
+            id:1,
+            name:{
+        title:'mr.',
+        first:'ishan',
+        last:'resh',
     },
-    {
-        id:1,
-        name:{
-    title:'mr.',
-    first:'ishan',
-    last:'resh',
-},
-location:{
-    city:'Kottagoda,Matara',
-},
-email:'reshmikaediriweera1997@gmail.com',
-dob:{
-    date:'1997-03-30',
-    age:24,
-},
-picture: {
-
-  
-    medium: "https://randomuser.me/api/portraits/med/men/75.jpg",
+    location:{
+        city:'Kottagoda,Matara',
+    },
+    email:'reshmikaediriweera1997@gmail.com',
+    dob:{
+        date:'1997-03-30',
+        age:24,
+    },
+    picture: {
+    
+      
+        medium: "https://randomuser.me/api/portraits/med/men/75.jpg",
+       
+      },
+    },
+    
+    
+    ]);
    
-  },
-},
-
-
-];
 
 
 const nameListComponent=()=>
@@ -195,9 +196,44 @@ const nameListComponent=()=>
     );
 }
 
+const addUserHandler=()=>
+{
+
+  const newUser={
+    id:4,
+    name:{
+title:'mr.',
+first:'i',
+last:'r',
+},
+location:{
+city:'Kottagoda,Matara',
+},
+email:'reshmikaediriweera1997@gmail.com',
+dob:{
+date:'1997-03-30',
+age:24,
+},
+picture: {
+
+
+medium: "https://randomuser.me/api/portraits/med/men/75.jpg",
+
+},
+
+  };
+
+ // setState((nameList)=> nameList.concat(newUser));
+ //spread operator
+setState(nameList=>[...nameList,newUser]);
+
+
+};
+
     return(
-        <div className='container'>
-            <ul className='list-group'>
+        <div className='container mt-4'>
+            <button className='btn btn-primary' onClick={addUserHandler}>Add Name</button>
+            <ul className='list-group mt-4'>
   
             {nameListComponent()}
     
