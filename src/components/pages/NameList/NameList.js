@@ -131,7 +131,9 @@ import NameListItems1 from './NameListItems1';
 
 function NameList(props) {
 
-    const nameList={
+    const nameList=[
+    {
+        id:1,
                 name:{
             title:'mr.',
             first:'ishan',
@@ -151,14 +153,54 @@ function NameList(props) {
             medium: "https://randomuser.me/api/portraits/med/men/75.jpg",
            
           },
-    }
+    },
+    {
+        id:1,
+        name:{
+    title:'mr.',
+    first:'ishan',
+    last:'resh',
+},
+location:{
+    city:'Kottagoda,Matara',
+},
+email:'reshmikaediriweera1997@gmail.com',
+dob:{
+    date:'1997-03-30',
+    age:24,
+},
+picture: {
+
+  
+    medium: "https://randomuser.me/api/portraits/med/men/75.jpg",
+   
+  },
+},
+
+
+];
+
+
+const nameListComponent=()=>
+{
+
+   
+    return (
+        nameList.map((aName)=>
+        {
+            return   <NameListItems1 key={aName.id} image={aName.picture.medium} name={aName.name.title+" "+aName.name.first+" "+aName.name.last} city={aName.location.city} email={aName.email} dob={aName.dob.date}/>
+           
+        })
+      
+    );
+}
 
     return(
-        <div>
-            <ul>
-            <NameListItems1 image={nameList.picture.medium} name={nameList.name.title+" "+nameList.name.first+" "+nameList.name.last} city={nameList.location.city} email={nameList.email} dob={nameList.dob.date}/>
-           
-          
+        <div className='container'>
+            <ul className='list-group'>
+  
+            {nameListComponent()}
+    
               
             </ul>
 

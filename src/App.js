@@ -35,13 +35,15 @@
 
 import React from 'react';
 import NameList from './components/pages/NameList/NameList';
+import HeaderBar from './components/HeaderBar/HeaderBar';
 
 function App()
 {
 
   return (
     <React.Fragment>
-      <h1>Name List</h1>
+    <HeaderBar/>
+      
 
       <NameList/>
     </React.Fragment>
