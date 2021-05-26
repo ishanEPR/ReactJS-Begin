@@ -126,10 +126,12 @@
 
 // export default NameList;
 
-import React,{useState} from "react";
-import NameListItems1 from './NameListItems1';
+import React,{useState,useEffect} from "react";
+import NameListItems from './NameListItems';
 
 function NameList(props) {
+
+    const [loadData,setLoaddata]=useState(new Date());
 
     const [nameList,setState]=useState([
         {
@@ -180,7 +182,15 @@ function NameList(props) {
     
     ]);
    
+useEffect(()=>{
+    fetch("https://randomuser.me/api").then(Response=>{
+      return Response.json();
+    }).then(ResponseData=>{
+       setState(nameList=>[...nameList, ResponseData.results[0]]);
+    })
+},[loadData]
 
+);
 
 const nameListComponent=()=>
 {
@@ -189,7 +199,7 @@ const nameListComponent=()=>
     return (
         nameList.map((aName)=>
         {
-            return   <NameListItems1 key={aName.id} image={aName.picture.medium} name={aName.name.title+" "+aName.name.first+" "+aName.name.last} city={aName.location.city} email={aName.email} dob={aName.dob.date}/>
+            return   <NameListItems key={aName.id} image={aName.picture.medium} name={aName.name.title+" "+aName.name.first+" "+aName.name.last} city={aName.location.city} email={aName.email} dob={aName.dob.date}/>
            
         })
       
@@ -199,33 +209,10 @@ const nameListComponent=()=>
 const addUserHandler=()=>
 {
 
-  const newUser={
-    id:4,
-    name:{
-title:'mr.',
-first:'i',
-last:'r',
-},
-location:{
-city:'Kottagoda,Matara',
-},
-email:'reshmikaediriweera1997@gmail.com',
-dob:{
-date:'1997-03-30',
-age:24,
-},
-picture: {
+ 
+ setLoaddata(new Date())
 
-
-medium: "https://randomuser.me/api/portraits/med/men/75.jpg",
-
-},
-
-  };
-
- // setState((nameList)=> nameList.concat(newUser));
- //spread operator
-setState(nameList=>[...nameList,newUser]);
+ 
 
 
 };
