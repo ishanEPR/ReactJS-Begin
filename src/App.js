@@ -5,10 +5,15 @@ import Home from './components/pages/Home/Home';
 import HeaderBar from './components/HeaderBar/HeaderBar';
 import Contact from './components/pages/Home/Contact';
 
+import Counter from './components/Counter';
+
 function App()
 {
  return(
    <div>
+   {/* mosh tutorial begin */}
+   <Counter/> 
+
    
    <BrowserRouter>
    <HeaderBar/>
