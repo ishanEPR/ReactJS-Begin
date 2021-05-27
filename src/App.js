@@ -6,6 +6,7 @@ import HeaderBar from './components/HeaderBar/HeaderBar';
 import Contact from './components/pages/Home/Contact';
 
 import Counter from './components/Counter';
+import NameListC from './components/pages/NameListC/NameListC';
 
 function App()
 {
@@ -24,8 +25,14 @@ function App()
    </Route>
    <Route path='/contact'>
    <Contact/>
+   
+     
+   </Route>
+   <Route path='/namelistc'>
+   <NameListC message='use class component'/>
 
    </Route>
+  
    <Route path='/'>
 
    <Home/>

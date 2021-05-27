@@ -28,6 +28,7 @@ function HeaderBar()
                 <li className='nav-item'><Link className='nav-link' to='/'>Home</Link></li>
                 <li className='nav-item'><Link className='nav-link' to='/nameList'>NameList</Link></li>
                 <li className='nav-item'><Link className='nav-link' to='/contact'>Contact</Link></li>
+                <li className='nav-item'><Link className='nav-link' to='/namelistc'>NameListC</Link></li>
             </ul>
         </nav>
     );
