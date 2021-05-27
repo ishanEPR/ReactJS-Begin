@@ -9,7 +9,8 @@ class NameListC extends Component {
 
         super(props);
         console.log('Constructer called');
-        this.state={nameList:
+        this.state={getaName:false,
+            nameList:
             [
                 {
                     id:1,
@@ -75,17 +76,28 @@ console.log(this.state.nameList);
     }
    componentDidUpdate()
    {
-    console.log('componentDidUpdate Method called');
-    console.log(this.state.message);
+   
+   if(this.state.getaName)
+   {
+    fetch("https://randomuser.me/api").then(Response=>{
+        return Response.json();
+      }).then(ResponseData=>{
+        
+         this.setState({
+             getaName:false,
+            nameList:[...this.state.nameList,ResponseData.results[0]]});
+ 
+  
+      })
+   }
        
    }
    
 
    addUserHandler=()=>
    {
-       console.log('button clicked');
-       console.log(this.state.message);
       
+      this.setState({getaName:true});
    }
 
    nameListComponent=()=>
